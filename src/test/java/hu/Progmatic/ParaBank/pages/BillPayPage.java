@@ -1,6 +1,89 @@
 package hu.Progmatic.ParaBank.pages;
 
 import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class BillPayPage extends DriverBaseTest {
+    WebDriver driver;
+    WebDriverWait wait;
+
+    By billPayby = By.xpath("//*[@id=\"leftPanel\"]/ul/li[4]/a");
+
+    By payeeNameBy = By.name("payee.name");
+
+    By addressby = By.name("payee.address.street");
+
+    By cityby = By.name("payee.address.city");
+    By stateby = By.name("payee.address.state");
+    By zipby = By.name("payee.address.zipCode");
+    By phoneby = By.name("payee.phoneNumber");
+    By accountby = By.name("payee.accountNumber");
+    By verifyaccountby = By.name("verifyAccount");
+    By amountby = By.name("amount");
+    By sendpaymentby = By.xpath("//*[@id=\"rightPanel\"]/div/div[1]/form/table/tbody/tr[14]/td[2]/input");
+    By succesmessageby = By.xpath("//*[@id=\"rightPanel\"]/div/div[2]/h1");
+    public BillPayPage(WebDriver driver, WebDriverWait wait) {
+        this.driver = driver;
+        this.wait = wait;
+    }
+
+    public void billPay() throws InterruptedException{
+
+        //Megkeresi ás rákattint a Bill pay gombra
+        WebElement billPayButton = driver.findElement(billPayby);
+        billPayButton.click();
+
+        //Megkeresi és kitölti a Payee name-t XY-al
+        WebElement payeeName = driver.findElement(payeeNameBy);
+        payeeName.sendKeys("XY");
+
+        //Megkeresi és kitölti a Address-t Dream bvl-al
+        WebElement address = driver.findElement(addressby);
+        address.sendKeys("Dream bvl.");
+
+        //Megkeresi és kitölti a City-t Hope-al
+        WebElement city = driver.findElement(cityby);
+        city.sendKeys("Hope");
+
+        //Megkeresi és kitölti a State-t Montana-al
+        WebElement state = driver.findElement(stateby);
+        state.sendKeys("Montana");
+
+        //Megkeresi és kitölti a Zip Code-t 5555-al
+        WebElement zipCode = driver.findElement(zipby);
+        zipCode.sendKeys("5555");
+
+        //Megkeresi és kitölti a Phone-t +1 777 777-al
+        WebElement phone = driver.findElement(phoneby);
+        phone.sendKeys("+1 777 777");
+
+        //Megkeresi és kitölti a Account-t 3465-al
+        WebElement account = driver.findElement(accountby);
+        account.sendKeys("3465");
+
+        //Megkeresi és kitölti a Veify Account-t 3465-al
+        WebElement verifyAccount = driver.findElement(verifyaccountby);
+        verifyAccount.sendKeys("3465");
+
+        //Megkeresi és kitölti a Amount-t 1000-al
+        WebElement amount = driver.findElement(amountby);
+        amount.sendKeys("1000");
+
+        //Megkeresi ás rákattint a Send Payment gombra
+        WebElement sendPaymentButton = driver.findElement(sendpaymentby);
+        sendPaymentButton.click();
+
+        //Kell várni 1 másodpercet, mert megelőzi
+        Thread.sleep(1000);
+
+        //Ellenőrzés
+        WebElement succesMessage = driver.findElement(succesmessageby);
+        Assert.assertEquals(succesMessage.getText(), "Bill Payment Complete");
+
+
+    }
 }

@@ -1,6 +1,7 @@
 package hu.Progmatic.ParaBank.testcases.AccountSevices;
 
 import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
+import hu.Progmatic.ParaBank.pages.AdminPagePage;
 import hu.Progmatic.ParaBank.pages.HomePage;
 import hu.Progmatic.ParaBank.pages.OpenNewAccountPage;
 import hu.Progmatic.ParaBank.pages.RegisterPage;
@@ -11,16 +12,19 @@ public class OpenNewAccountTest extends DriverBaseTest {
     RegisterPage registerPage;
 
     OpenNewAccountPage openNewAccountPage;
+    AdminPagePage adminPagePage;
 
     @Test
-    public void OpenNewAccountTest() {
+    public void OpenNewAccountTest() throws InterruptedException {
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         openNewAccountPage = new OpenNewAccountPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        adminPagePage.clean();
         homePage.loadHomePage();
         registerPage.Register();
-        openNewAccountPage.openNewAccount();
+        openNewAccountPage.NewAccount();
+        adminPagePage.clean();
 
-        //ide kell még hogy törölje az adatbázist
     }
 }
