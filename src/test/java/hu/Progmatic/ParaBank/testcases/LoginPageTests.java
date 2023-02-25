@@ -1,13 +1,8 @@
-package hu.progmatic.testcases;
+package hu.Progmatic.ParaBank.testcases;
 
-import hu.progmatic.driverfactory.DriverBaseTest;
-import hu.progmatic.pages.HomePage;
-import hu.progmatic.pages.LoginPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
+import hu.Progmatic.ParaBank.pages.HomePage;
+import hu.Progmatic.ParaBank.pages.LoginPage;
 import org.testng.annotations.Test;
 
 public class LoginPageTests extends DriverBaseTest {

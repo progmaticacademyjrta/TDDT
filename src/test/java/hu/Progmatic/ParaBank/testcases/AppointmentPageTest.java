@@ -1,9 +1,8 @@
-package hu.progmatic.testcases;
+package hu.Progmatic.ParaBank.testcases;
 
-import hu.progmatic.driverfactory.DriverBaseTest;
-import hu.progmatic.pages.AppointmentPage;
-import hu.progmatic.pages.HomePage;
-import hu.progmatic.pages.LoginPage;
+import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
+import hu.Progmatic.ParaBank.pages.AppointmentPage;
+import hu.Progmatic.ParaBank.pages.HomePage;
 import org.testng.annotations.Test;
 
 public class AppointmentPageTest extends DriverBaseTest {

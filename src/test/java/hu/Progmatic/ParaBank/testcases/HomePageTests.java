@@ -1,7 +1,7 @@
-package hu.progmatic.testcases;
+package hu.Progmatic.ParaBank.testcases;
 
-import hu.progmatic.driverfactory.DriverBaseTest;
-import hu.progmatic.pages.HomePage;
+import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
+import hu.Progmatic.ParaBank.pages.HomePage;
 import org.testng.annotations.Test;
 
 public class HomePageTests extends DriverBaseTest {
