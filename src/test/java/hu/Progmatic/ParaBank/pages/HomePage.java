@@ -1,16 +1,13 @@
 package hu.Progmatic.ParaBank.pages;
 
-import org.openqa.selenium.By;
+import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class HomePage {
+public class HomePage extends DriverBaseTest {
     WebDriver driver;
     WebDriverWait wait;
-    By headerBy = By.id("top");
-    By AppointmentButtonBy = By.id("btn-make-appointment");
 
 
     public HomePage(WebDriver driver, WebDriverWait wait) {
@@ -19,20 +16,8 @@ public class HomePage {
     }
 
     public void loadHomePage() {
-        driver.get("https://katalon-demo-cura.herokuapp.com");
-        WebElement headerElement = driver.findElement(headerBy);
-        Assert.assertTrue(headerElement.isDisplayed());
+        driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
         System.out.println("Homepage loaded properly.");
     }
-
-    public void checkMakeAppointmentButton(){
-        //Megkeresi a Make Appointment gombot
-        WebElement AppointmentButton = driver.findElement(AppointmentButtonBy);
-        AppointmentButton.click();
-        //Ellenőrzés
-        Assert.assertEquals(driver.getCurrentUrl(),"https://katalon-demo-cura.herokuapp.com/profile.php#login");
-        System.out.println("clickAppointmentButton Test Ok!");
-    }
-
-
 }
