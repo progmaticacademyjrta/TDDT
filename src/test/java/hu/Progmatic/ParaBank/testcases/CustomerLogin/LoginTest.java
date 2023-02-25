@@ -24,7 +24,13 @@ public class LoginTest extends DriverBaseTest {
         homePage.loadHomePage();
         registerPage.Register();
         logOutPage.LogOut();
-        logInPage.logIn();
+        logInPage.LoginUsernameBadPwdBad();
+        logInPage.LoginUsernameEmptyPwdEmpty();
+        logInPage.LoginUsernameOKPwdEmpty();
+        logInPage.LoginUsernameEmptyPwdOK();
+        logInPage.LoginUsernameBadPwdOK();
+        logInPage.LoginUsernameOKPwdBad();
+        logInPage.logInSucces();
         adminPagePage.clean();
     }
 }

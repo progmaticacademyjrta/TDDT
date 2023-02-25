@@ -54,22 +54,22 @@ public class ForgotLogInInfoPage extends DriverBaseTest {
         //Megkeresi és kitölti a State-t Montana-val
         WebElement state = driver.findElement(stateby);
         state.sendKeys("Montana");
-
-        //Megkeresi és kitölti a Zip code-t 55555-al
+        Thread.sleep(1000);
+        //Megkeresi és kitölti a Zip code-t 77777-al
         WebElement zipCode = driver.findElement(zipby);
-        zipCode.sendKeys("55555");
+        zipCode.sendKeys("77777");
 
-
-        //Megkeresi és kitölti a SSN-t 32423423-al
+        Thread.sleep(1000);
+        //Megkeresi és kitölti a SSN-t asd-al
         WebElement ssn = driver.findElement(ssnby);
-        ssn.sendKeys("32423423");
+        ssn.sendKeys("asd");
 
-
+        Thread.sleep(2000);
         //Megkeresi és rákattint a Find my info gombra
         WebElement findMyInfo = driver.findElement(findby);
         findMyInfo.click();
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         //Ellenőriz
         WebElement message = driver.findElement(messageby);

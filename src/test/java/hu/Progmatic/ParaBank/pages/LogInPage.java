@@ -17,12 +17,129 @@ public class LogInPage extends DriverBaseTest {
     By loginbuttonby = By.xpath("//*[@id=\"loginPanel\"]/form/div[3]/input");
 
     By successby = By.className("title");
+    By Faildby = By.className("error");
     public LogInPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
+    public void LoginUsernameBadPwdBad() {
+        //Megkeresi és kitölti a username mezőt TDDT-vel
+        WebElement userName = driver.findElement(usernameby);
+        userName.sendKeys("kecske");
 
-    public void logIn() {
+        //Megkeresi és kitölti a password mezőt progmatic6-al
+        WebElement pwd = driver.findElement(pwdby);
+        pwd.sendKeys("kecske");
+
+        //Megkeresi és rákattint a login buttonra
+        WebElement LoginButton = driver.findElement(loginbuttonby);
+        LoginButton.click();
+
+
+        //Ellenőrzés
+        WebElement Faild = driver.findElement(Faildby);
+        Assert.assertEquals(Faild.getText(), "The username and password could not be verified.");
+
+
+    }
+    public void LoginUsernameEmptyPwdEmpty() {
+        //Megkeresi és kitölti a username mezőt TDDT-vel
+        WebElement userName = driver.findElement(usernameby);
+        userName.sendKeys("");
+
+        //Megkeresi és kitölti a password mezőt progmatic6-al
+        WebElement pwd = driver.findElement(pwdby);
+        pwd.sendKeys("");
+
+        //Megkeresi és rákattint a login buttonra
+        WebElement LoginButton = driver.findElement(loginbuttonby);
+        LoginButton.click();
+
+
+        //Ellenőrzés
+        WebElement Faild = driver.findElement(Faildby);
+        Assert.assertEquals(Faild.getText(), "Please enter a username and password.");
+
+
+    }
+    public void LoginUsernameOKPwdEmpty() {
+        //Megkeresi és kitölti a username mezőt TDDT-vel
+        WebElement userName = driver.findElement(usernameby);
+        userName.sendKeys("TDDT");
+
+        //Megkeresi és kitölti a password mezőt progmatic6-al
+        WebElement pwd = driver.findElement(pwdby);
+        pwd.sendKeys("");
+
+        //Megkeresi és rákattint a login buttonra
+        WebElement LoginButton = driver.findElement(loginbuttonby);
+        LoginButton.click();
+
+
+        //Ellenőrzés
+        WebElement Faild = driver.findElement(Faildby);
+        Assert.assertEquals(Faild.getText(), "Please enter a username and password.");
+
+
+    }
+public void LoginUsernameEmptyPwdOK() {
+    //Megkeresi és kitölti a username mezőt TDDT-vel
+    WebElement userName = driver.findElement(usernameby);
+    userName.sendKeys("");
+
+    //Megkeresi és kitölti a password mezőt progmatic6-al
+    WebElement pwd = driver.findElement(pwdby);
+    pwd.sendKeys("progmatic6");
+
+    //Megkeresi és rákattint a login buttonra
+    WebElement LoginButton = driver.findElement(loginbuttonby);
+    LoginButton.click();
+
+    //Ellenőrzés
+    WebElement Faild = driver.findElement(Faildby);
+    Assert.assertEquals(Faild.getText(), "Please enter a username and password.");
+
+
+}
+    public void LoginUsernameBadPwdOK(){
+        //Megkeresi és kitölti a username mezőt TDDT-vel
+        WebElement userName = driver.findElement(usernameby);
+        userName.sendKeys("TTTT");
+
+        //Megkeresi és kitölti a password mezőt progmatic6-al
+        WebElement pwd = driver.findElement(pwdby);
+        pwd.sendKeys("progmatic6");
+
+        //Megkeresi és rákattint a login buttonra
+        WebElement LoginButton = driver.findElement(loginbuttonby);
+        LoginButton.click();
+
+        //Ellenőrzés
+        WebElement Faild = driver.findElement(Faildby);
+        Assert.assertEquals(Faild.getText(), "The username and password could not be verified.");
+
+    }
+
+    public void LoginUsernameOKPwdBad(){
+        //Megkeresi és kitölti a username mezőt TDDT-vel
+        WebElement userName = driver.findElement(usernameby);
+        userName.sendKeys("TDDT");
+
+        //Megkeresi és kitölti a password mezőt progmatic6-al
+        WebElement pwd = driver.findElement(pwdby);
+        pwd.sendKeys("Bad");
+
+        //Megkeresi és rákattint a login buttonra
+        WebElement LoginButton = driver.findElement(loginbuttonby);
+        LoginButton.click();
+
+        //Ellenőrzés
+        WebElement Faild = driver.findElement(Faildby);
+        Assert.assertEquals(Faild.getText(), "The username and password could not be verified.");
+
+
+    }
+    public void logInSucces() {
         //Megkeresi és kitölti a username mezőt TDDT-vel
         WebElement userName = driver.findElement(usernameby);
         userName.sendKeys("TDDT");
