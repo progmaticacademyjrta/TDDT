@@ -23,8 +23,9 @@ public class RegisterPage extends DriverBaseTest {
     By usernameby = By.id("customer.username");
     By passwordby = By.id("customer.password");
     By confirmby = By.id("repeatedPassword");
-    By registerButtonby = By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input");
     By successMessageby = By.xpath("//*[@id=\"rightPanel\"]/h1");
+    By registerButtonby = By.cssSelector("input[value='Register']");
+
     public RegisterPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;

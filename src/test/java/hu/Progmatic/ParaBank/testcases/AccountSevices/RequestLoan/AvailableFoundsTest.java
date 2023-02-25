@@ -7,28 +7,29 @@ import hu.Progmatic.ParaBank.pages.RegisterPage;
 import hu.Progmatic.ParaBank.pages.RequestLoanPage;
 import org.testng.annotations.Test;
 
-public class DownPaymentTest extends DriverBaseTest {
+public class AvailableFoundsTest extends DriverBaseTest {
 
     HomePage homePage;
     RegisterPage registerPage;
     AdminPagePage adminPagePage;
-
     RequestLoanPage requestLoanPage;
+
     @Test
-    public void RequestLoanDownPaymentTest() throws InterruptedException {
+    public void RequestLoanAvailableFundsTest() throws InterruptedException {
         homePage = new HomePage(driver,wait);
         registerPage = new RegisterPage(driver,wait);
         adminPagePage = new AdminPagePage(driver,wait);
         requestLoanPage = new RequestLoanPage(driver,wait);
 
-        adminPagePage.downPayment();
+        adminPagePage.availableFunds();
         registerPage.Register();
-        requestLoanPage.boundaryValue501();
-        adminPagePage.downPayment();
+        requestLoanPage.boundaryValue999();
+        adminPagePage.availableFunds();
         registerPage.Register();
-        requestLoanPage.boundaryValue500();
-        adminPagePage.downPayment();
+        requestLoanPage.boundaryValue1000();
+        adminPagePage.availableFunds();
         registerPage.Register();
-        requestLoanPage.boundaryValue499();
+        requestLoanPage.boundaryValue1001();
     }
+
 }
