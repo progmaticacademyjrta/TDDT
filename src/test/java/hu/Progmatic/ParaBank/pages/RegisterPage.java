@@ -23,14 +23,14 @@ public class RegisterPage extends DriverBaseTest {
     By usernameby = By.id("customer.username");
     By passwordby = By.id("customer.password");
     By confirmby = By.id("repeatedPassword");
-    By registerButtonby = By.xpath("//[@value = 'Register']");
-
+    By registerButtonby = By.xpath("//*[@id=\"customerForm\"]/table/tbody/tr[13]/td[2]/input");
+    By successMessageby = By.xpath("//*[@id=\"rightPanel\"]/h1");
     public RegisterPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
     }
 
-    public void Register() throws InterruptedException {
+    public void Register()  {
         //Megkeresi a Register gombot és rá kattint
         WebElement RegisterButton = driver.findElement(regButtonby);
         RegisterButton.click();
@@ -79,11 +79,12 @@ public class RegisterPage extends DriverBaseTest {
         WebElement confirmInput = driver.findElement(confirmby);
         confirmInput.sendKeys("progmatic6");
 
+        //Rákattint a register gombra
         WebElement registerButton = driver.findElement(registerButtonby);
         registerButton.click();
 
-        Thread.sleep(20000);
-
-        Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/register.htm");
+        //Megkeresi az üzenetet
+        WebElement successMessage = driver.findElement(successMessageby);
+        Assert.assertEquals(successMessage.getText(), "Welcome TDDT");
     }
 }

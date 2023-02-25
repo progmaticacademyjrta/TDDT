@@ -15,5 +15,6 @@ public class LogOutTest extends DriverBaseTest {
         homePage = new HomePage(driver, wait);
         homePage.loadHomePage();
 
+        //ide kell még hogy törölje az adatbázist
     }
 }

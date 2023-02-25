@@ -11,11 +11,13 @@ public class RegisterTest extends DriverBaseTest {
     RegisterPage registerPage;
 
     @Test
-    public void homepageLoadedTest() {
+    public void RegisterTest() {
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         homePage.loadHomePage();
         registerPage.Register();
+
+        //ide kell még hogy törölje az adatbázist
     }
 
 }
