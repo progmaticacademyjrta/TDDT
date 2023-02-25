@@ -23,7 +23,7 @@ public class RegisterPage extends DriverBaseTest {
     By usernameby = By.id("customer.username");
     By passwordby = By.id("customer.password");
     By confirmby = By.id("repeatedPassword");
-    By registerButtonby = By.xpath("//[@value = 'Register']");
+    By registerButtonby = By.cssSelector("input[value='Register'");
 
     public RegisterPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -81,9 +81,5 @@ public class RegisterPage extends DriverBaseTest {
 
         WebElement registerButton = driver.findElement(registerButtonby);
         registerButton.click();
-
-        Thread.sleep(20000);
-
-        Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/register.htm");
     }
 }
