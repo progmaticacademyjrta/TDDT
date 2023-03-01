@@ -10,7 +10,7 @@ public class HomeIconTest extends DriverBaseTest {
     HomePage homePage;
     HomeIconPage homeIconPage;
 
-    @Test (groups = "icon",description = "Test Case Key: TDDT-T16")
+    @Test (description = "Test Case Key: TDDT-T16")
     public void homeIconTestCase() {
 
         homePage = new HomePage(driver, wait);

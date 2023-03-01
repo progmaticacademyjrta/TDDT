@@ -18,9 +18,10 @@ test {
     useTestNG()
 }
 
-task smokeTests(type: Test) { // we define a task with name 'smokeTests'
-    def groups = System.getProperty('groups', 'icon')
+task smokeTests(type: Test) {
+    def groups = System.getProperty('groups', 'smoketests')
     useTestNG() {
         includeGroups groups
     }
 }
+

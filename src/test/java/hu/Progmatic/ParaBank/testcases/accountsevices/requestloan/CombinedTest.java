@@ -14,37 +14,37 @@ public class CombinedTest extends DriverBaseTest {
     AdminPagePage adminPagePage;
     RequestLoanPage requestLoanPage;
 
-    @Test (description = "Test Case Key: TDDT-T27")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T27")
     public void combinedBoundaryValue500Valid() throws InterruptedException {
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue500();
     }
 
-    @Test (description = "Test Case Key: TDDT-T28")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T28")
     public void combinedBoundaryValue501Valid() throws InterruptedException {
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue501();
     }
 
-    @Test (description = "Test Case Key: TDDT-T26")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T26")
     public void combinedBoundaryValue499Invalid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
 
         adminPagePage.combined();
@@ -52,26 +52,26 @@ public class CombinedTest extends DriverBaseTest {
         requestLoanPage.boundaryValue499();
     }
 
-    @Test (description = "Test Case Key: TDDT-T25")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T25")
     public void combinedBoundaryValue1001Invalid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue1001();
     }
 
-    @Test (description = "Test Case Key: TDDT-T24")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T24")
     public void combinedBoundaryValue1000Valid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
 
         adminPagePage.combined();

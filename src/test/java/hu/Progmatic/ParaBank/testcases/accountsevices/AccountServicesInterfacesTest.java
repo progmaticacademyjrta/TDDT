@@ -12,7 +12,7 @@ public class AccountServicesInterfacesTest extends DriverBaseTest {
     RegisterPage registerPage;
     AccountServicesInterfacesPage accountServicesInterfacesPage;
 
-    @Test (description = "Test Case Key: TDDT-T30")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T30")
     public void accountServicesInterfacesTestCase() throws InterruptedException {
 
         homePage = new HomePage(driver, wait);

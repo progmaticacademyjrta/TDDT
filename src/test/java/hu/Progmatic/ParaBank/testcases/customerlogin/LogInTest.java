@@ -12,7 +12,7 @@ public class LogInTest extends DriverBaseTest {
     LogInPage logInPage;
     AdminPagePage adminPagePage;
 
-    @Test (description = "Test Case Key: TDDT-T3")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T3")
     public void logInTestCaseEmptyUsernameAndEmptyPasswordRule1() {
 
         homePage = new HomePage(driver, wait);
@@ -29,7 +29,7 @@ public class LogInTest extends DriverBaseTest {
 
     }
 
-    @Test (description = "Test Case Key: TDDT-T4")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T4")
     public void logInTestCaseEmptyUsernameAndValidPasswordRule2() {
 
         homePage = new HomePage(driver, wait);
@@ -40,7 +40,7 @@ public class LogInTest extends DriverBaseTest {
 
     }
 
-    @Test (description = "Test Case Key: TDDT-T5")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T5")
     public void logInTestCaseValidUsernameAndEmptyPasswordRule3() {
 
         homePage = new HomePage(driver, wait);
@@ -52,7 +52,7 @@ public class LogInTest extends DriverBaseTest {
 
     }
 
-    @Test (description = "Test Case Key: TDDT-T6")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T6")
     public void logInTestCaseValidUsernameAndValidPasswordRule4() {
 
         homePage = new HomePage(driver, wait);
@@ -68,7 +68,7 @@ public class LogInTest extends DriverBaseTest {
 
     }
 
-    @Test (description = "Test Case Key: TDDT-T7")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T7")
     public void logInTestCaseValidUsernameAndInvalidPasswordRule5() {
 
         homePage = new HomePage(driver, wait);
@@ -79,7 +79,7 @@ public class LogInTest extends DriverBaseTest {
 
     }
 
-    @Test (description = "Test Case Key: TDDT-T8")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T8")
     public void logInTestCaseInvalidUsernameAndValidPasswordRule6() {
 
         homePage = new HomePage(driver, wait);
@@ -90,7 +90,7 @@ public class LogInTest extends DriverBaseTest {
 
     }
 
-    @Test (description = "Test Case Key: TDDT-T9")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T9")
     public void logInTestCaseInvalidUsernameAndInvalidPasswordRule7() {
 
 

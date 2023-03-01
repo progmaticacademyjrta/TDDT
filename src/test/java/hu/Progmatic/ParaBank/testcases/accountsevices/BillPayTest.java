@@ -14,7 +14,7 @@ public class BillPayTest extends DriverBaseTest {
     BillPayPage billPayPage;
     AdminPagePage adminPagePage;
 
-    @Test (description = "Test Case Key: TDDT-T35")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T35")
     public void billPayTestCase() throws InterruptedException {
 
         homePage = new HomePage(driver, wait);

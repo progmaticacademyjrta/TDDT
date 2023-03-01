@@ -14,7 +14,7 @@ public class OpenNewAccountTest extends DriverBaseTest {
     OpenNewAccountPage openNewAccountPage;
     AdminPagePage adminPagePage;
 
-    @Test (description = "Test Case Key: TDDT-T11")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T11")
     public void openNewAccountTestCase1() throws InterruptedException {
 
         homePage = new HomePage(driver, wait);
@@ -28,10 +28,9 @@ public class OpenNewAccountTest extends DriverBaseTest {
         openNewAccountPage.newAccountChecking();
 
 
-
     }
 
-    @Test (description = "Test Case Key: TDDT-T15")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T15")
     public void openNewAccountTestCase2() throws InterruptedException {
 
         homePage = new HomePage(driver, wait);

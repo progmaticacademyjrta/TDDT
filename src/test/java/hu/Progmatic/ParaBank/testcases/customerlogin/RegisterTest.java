@@ -12,7 +12,7 @@ public class RegisterTest extends DriverBaseTest {
     RegisterPage registerPage;
     AdminPagePage adminPagePage;
 
-    @Test (description = "Test Case Key: TDDT-T1")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T1")
     public void signUpTestCase() {
 
         homePage = new HomePage(driver, wait);

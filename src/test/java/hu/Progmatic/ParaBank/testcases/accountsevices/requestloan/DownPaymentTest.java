@@ -14,39 +14,39 @@ public class DownPaymentTest extends DriverBaseTest {
     AdminPagePage adminPagePage;
     RequestLoanPage requestLoanPage;
 
-    @Test (description = "Test Case Key: TDDT-T19")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T19")
     public void downPaymentBoundaryValue500Valid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.downPayment();
         registerPage.register();
         requestLoanPage.boundaryValue500();
     }
 
-    @Test (description = "Test Case Key: TDDT-T20")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T20")
     public void downPaymentBoundaryValue501Valid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.downPayment();
         registerPage.register();
         requestLoanPage.boundaryValue501();
     }
 
-    @Test (description = "Test Case Key: TDDT-T18")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T18")
     public void downPaymentBoundaryValue499Invalid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
 
         adminPagePage.downPayment();

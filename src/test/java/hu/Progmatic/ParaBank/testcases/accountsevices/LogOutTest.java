@@ -14,7 +14,7 @@ public class LogOutTest extends DriverBaseTest {
     LogOutPage logOutPage;
     AdminPagePage adminPagePage;
 
-    @Test (description = "Test Case Key: TDDT-T29")
+    @Test(description = "Test Case Key: TDDT-T29")
     public void logOutTestCase() {
 
         homePage = new HomePage(driver, wait);

@@ -14,39 +14,39 @@ public class AvailableFoundsTest extends DriverBaseTest {
     AdminPagePage adminPagePage;
     RequestLoanPage requestLoanPage;
 
-    @Test (description = "Test Case Key: TDDT-T22")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T22")
     public void availableFundsBoundaryValue999Valid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.availableFunds();
         registerPage.register();
         requestLoanPage.boundaryValue999();
     }
 
-    @Test (description = "Test Case Key: TDDT-T23")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T23")
     public void availableFundsBoundaryValue1001Invalid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
         adminPagePage.availableFunds();
         registerPage.register();
         requestLoanPage.boundaryValue1001();
     }
 
-    @Test (description = "Test Case Key: TDDT-T21")
+    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T21")
     public void availableFundsBoundaryValue1000Valid() throws InterruptedException {
 
-        homePage = new HomePage(driver,wait);
-        registerPage = new RegisterPage(driver,wait);
-        adminPagePage = new AdminPagePage(driver,wait);
-        requestLoanPage = new RequestLoanPage(driver,wait);
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+        requestLoanPage = new RequestLoanPage(driver, wait);
 
 
         adminPagePage.availableFunds();
