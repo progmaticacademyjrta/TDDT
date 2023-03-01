@@ -29,7 +29,7 @@ public class AccountServicesInterfacesPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void interfacesCheck() throws InterruptedException {
+    public void interfacesCheck() {
         WebElement openNewAccount = driver.findElement(openNewAccountBy);
         openNewAccount.click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/openaccount.htm");

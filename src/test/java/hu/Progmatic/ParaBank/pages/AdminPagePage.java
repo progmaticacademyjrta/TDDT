@@ -11,16 +11,13 @@ import org.testng.Assert;
 public class AdminPagePage extends DriverBaseTest {
     WebDriver driver;
     WebDriverWait wait;
-    By cleanby = By.cssSelector("button[value='CLEAN']");
+
     By initBalanceBy = By.id("initialBalance");
     By minimumBalanceBy = By.id("minimumBalance");
-
     By localProcessorBy = By.id("loanProcessor");
-
     By tresholdBy = By.id("loanProcessorThreshold");
-
     By submitBy = By.cssSelector("input[value='Submit']");
-
+    By cleanby = By.cssSelector("button[value='CLEAN']");
 
 
     public AdminPagePage(WebDriver driver, WebDriverWait wait) {
@@ -28,13 +25,7 @@ public class AdminPagePage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void clean(){
-        driver.get("https://parabank.parasoft.com/parabank/admin.htm");
-        WebElement cleanButton = driver.findElement(cleanby);
-        cleanButton.click();
-    }
-
-    public void downPayment() throws InterruptedException {
+    public void downPayment() {
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         WebElement initBalanceInput = driver.findElement(initBalanceBy);
@@ -63,7 +54,8 @@ public class AdminPagePage extends DriverBaseTest {
         Assert.assertTrue(status.isDisplayed());
         System.out.println("Down payment loan processor server is running");
     }
-    public void availableFunds() throws InterruptedException {
+
+    public void availableFunds() {
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         WebElement initBalanceInput = driver.findElement(initBalanceBy);
@@ -93,7 +85,7 @@ public class AdminPagePage extends DriverBaseTest {
         System.out.println("Available loan processor server is running");
     }
 
-    public void combined() throws InterruptedException {
+    public void combined() {
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         WebElement initBalanceInput = driver.findElement(initBalanceBy);

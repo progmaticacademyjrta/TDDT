@@ -15,7 +15,7 @@ public class OpenNewAccountPage extends DriverBaseTest {
     By openNEwAccountBy = By.xpath("//*[@id=\"leftPanel\"]/ul/li[1]/a");
     By typeby = By.id("type");
 
-    //By accountby = By.className("input ng-pristine ng-valid ng-not-empty ng-touched");
+
     By successMessageby2 = By.className("title");
     By OpenNewAccountButtonby = By.xpath("//*[@id=\"rightPanel\"]/div/div/form/div/input");
 
@@ -24,11 +24,12 @@ public class OpenNewAccountPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void NewAccount() throws InterruptedException{
-        //Megkeresi a Open New Account gombot
+    public void newAccountSavings() throws InterruptedException {
+
+
         WebElement openNEwAccount = driver.findElement(openNEwAccountBy);
         openNEwAccount.click();
-        //Kiválaszt a legördülő listából a SAVINGS-et
+
         Select type = new Select(driver.findElement(typeby));
         type.selectByVisibleText("SAVINGS");
 
@@ -36,7 +37,27 @@ public class OpenNewAccountPage extends DriverBaseTest {
         clickOnAccountButton.click();
         Thread.sleep(1000);
 
-        //Ellenőriz
+
+        WebElement successMessage2 = driver.findElement(successMessageby2);
+        Assert.assertEquals(successMessage2.getText(), "Account Opened!");
+    }
+
+    public void newAccountChecking() throws InterruptedException {
+
+
+        WebElement openNEwAccount = driver.findElement(openNEwAccountBy);
+        openNEwAccount.click();
+
+
+        Select type = new Select(driver.findElement(typeby));
+        type.selectByVisibleText("CHECKING");
+
+
+        WebElement clickOnAccountButton = driver.findElement(OpenNewAccountButtonby);
+        clickOnAccountButton.click();
+        Thread.sleep(1000);
+
+
         WebElement successMessage2 = driver.findElement(successMessageby2);
         Assert.assertEquals(successMessage2.getText(), "Account Opened!");
     }

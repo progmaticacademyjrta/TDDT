@@ -1,4 +1,4 @@
-package hu.Progmatic.ParaBank.testcases.CustomerLogin;
+package hu.Progmatic.ParaBank.testcases.customerlogin;
 
 import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
 import hu.Progmatic.ParaBank.pages.AdminPagePage;
@@ -10,17 +10,19 @@ public class RegisterTest extends DriverBaseTest {
 
     HomePage homePage;
     RegisterPage registerPage;
-
     AdminPagePage adminPagePage;
-    @Test
-    public void RegisterTest() {
+
+    @Test (description = "Test Case Key: TDDT-T1")
+    public void signUpTestCase() {
+
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
-        adminPagePage.clean();
+
+
         homePage.loadHomePage();
-        registerPage.Register();
-        adminPagePage.clean();
+        registerPage.register();
+
     }
 
 }

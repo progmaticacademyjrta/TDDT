@@ -26,34 +26,33 @@ public class MailIconPage extends DriverBaseTest {
     }
 
     public void mailIcon() {
-        //Megkeresi és rákattint a Mail iconra
+
         WebElement iconClick = driver.findElement(iconby);
         iconClick.click();
 
-        //Megkeresi és kitölti a Name mezőt XY-al
+
         WebElement name = driver.findElement(nameby);
         name.sendKeys("XY");
 
-        //Megkeresi és kitölti a Email mezőt valami@valami.com-al
+
         WebElement email = driver.findElement(mailby);
         email.sendKeys("valami@valami.com");
 
-        //Megkeresi és kitölti a Name mezőt XY-al
+
         WebElement phone = driver.findElement(phoneby);
         phone.sendKeys("+1 777 777");
 
-        //Megkresi és kitölti a Message mezőt Hello!
+
         WebElement text = driver.findElement(messageby);
         text.sendKeys("Hello!");
 
-        //Megkeresi és rákattint a Send gombra
+
         WebElement sendButton = driver.findElement(sentoButtonby);
         sendButton.click();
 
-        //Ellenőrzés
+
         WebElement success = driver.findElement(MailIconPage.this.successby);
         Assert.assertEquals(success.getText(), "Thank you XY");
-
 
 
     }

@@ -45,7 +45,7 @@ public class RequestLoanPage extends DriverBaseTest {
 
         WebElement statusText = driver.findElement(loanStatusBy);
 
-        Assert.assertEquals(statusText.getText(),"Approved");
+        Assert.assertEquals(statusText.getText(), "Approved");
         System.out.println("Loan Status: Approved (501,valid)");
 
         WebElement logOut = driver.findElement(logOutBy);
@@ -71,7 +71,7 @@ public class RequestLoanPage extends DriverBaseTest {
 
         WebElement statusText = driver.findElement(loanStatusBy);
 
-        Assert.assertEquals(statusText.getText(),"Approved");
+        Assert.assertEquals(statusText.getText(), "Approved");
         System.out.println("Loan Status: Approved (500,valid)");
 
         WebElement logOut = driver.findElement(logOutBy);
@@ -96,7 +96,7 @@ public class RequestLoanPage extends DriverBaseTest {
 
         WebElement statusText = driver.findElement(loanStatusBy);
 
-        Assert.assertEquals(statusText.getText(),"Denied");
+        Assert.assertEquals(statusText.getText(), "Denied");
         System.out.println("Loan Status: Denied (499,valid)");
 
         WebElement logOut = driver.findElement(logOutBy);
@@ -121,13 +121,14 @@ public class RequestLoanPage extends DriverBaseTest {
 
         WebElement statusText = driver.findElement(loanStatusBy);
 
-        Assert.assertEquals(statusText.getText(),"Approved");
+        Assert.assertEquals(statusText.getText(), "Approved");
         System.out.println("Loan Status: Approved (999,valid)");
 
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
     }
+
     public void boundaryValue1000() throws InterruptedException {
 
         WebElement requestLoan = driver.findElement(requestLoanBy);
@@ -143,17 +144,10 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement applyNowButton = driver.findElement(applyNowBy);
         applyNowButton.click();
 
-      /*  WebElement error = driver.findElement(errorBy);
 
-        System.out.println(error.getText());
-        Assert.assertEquals(error.getText(),"An internal error has occurred and has been logged.");
-        System.out.println("Error");
-        Thread.sleep(1500); */
+        WebElement statusText = driver.findElement(loanStatusBy);
 
-
-       WebElement statusText = driver.findElement(loanStatusBy);
-
-        Assert.assertEquals(statusText.getText(),"Approved");
+        Assert.assertEquals(statusText.getText(), "Approved");
         System.out.println("Loan Status: Approved (1000,valid)");
 
         WebElement logOut = driver.findElement(logOutBy);
@@ -178,7 +172,7 @@ public class RequestLoanPage extends DriverBaseTest {
 
         WebElement statusText = driver.findElement(loanStatusBy);
 
-        Assert.assertEquals(statusText.getText(),"Denied");
+        Assert.assertEquals(statusText.getText(), "Denied");
         System.out.println("Loan Status: Denied (1001,Invalid)");
 
         WebElement logOut = driver.findElement(logOutBy);

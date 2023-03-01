@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public class HomeIconPage extends DriverBaseTest {
 
@@ -19,12 +18,12 @@ public class HomeIconPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void homeIcon() throws InterruptedException{
-        //Megkeresi és rákattint a Home page iconra
+    public void homeIcon() {
+
         WebElement iconClick = driver.findElement(iconby);
         iconClick.click();
 
-        //Megkeresi és rákattint a Read More-ra
+
         WebElement readMore = driver.findElement(readMoreby);
         readMore.click();
 

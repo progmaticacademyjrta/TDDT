@@ -22,11 +22,11 @@ public class DemoIconPage extends DriverBaseTest {
 
     public void demoIcon(){
 
-        //Megkeresi és rákattint a Demo iconra
+
         WebElement iconClick = driver.findElement(iconby);
         iconClick.click();
 
-        //Ellenőriz
+
         WebElement message = driver.findElement(messageby);
         Assert.assertEquals(message.getText(), "ParaSoft Demo Website");
 

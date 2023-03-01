@@ -1,4 +1,4 @@
-package hu.Progmatic.ParaBank.testcases.AccountSevices;
+package hu.Progmatic.ParaBank.testcases.accountsevices;
 
 import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
 import hu.Progmatic.ParaBank.pages.AccountServicesInterfacesPage;
@@ -12,14 +12,15 @@ public class AccountServicesInterfacesTest extends DriverBaseTest {
     RegisterPage registerPage;
     AccountServicesInterfacesPage accountServicesInterfacesPage;
 
-    @Test
-    public void accountServicesInterfacesTest() throws InterruptedException {
+    @Test (description = "Test Case Key: TDDT-T30")
+    public void accountServicesInterfacesTestCase() throws InterruptedException {
+
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         accountServicesInterfacesPage = new AccountServicesInterfacesPage(driver, wait);
 
         homePage.loadHomePage();
-        registerPage.Register();
+        registerPage.register();
         accountServicesInterfacesPage.interfacesCheck();
 
     }

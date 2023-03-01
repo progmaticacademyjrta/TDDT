@@ -19,8 +19,8 @@ public class LogOutPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void LogOut(){
-        //Megkersi a logout gombot és rákattint
+    public void logOut(){
+
         WebElement logoutButton = driver.findElement(logoutby);
         logoutButton.click();
         Assert.assertEquals(driver.getCurrentUrl(),"https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");

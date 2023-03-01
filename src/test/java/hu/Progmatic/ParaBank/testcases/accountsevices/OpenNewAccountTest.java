@@ -1,4 +1,4 @@
-package hu.Progmatic.ParaBank.testcases.AccountSevices;
+package hu.Progmatic.ParaBank.testcases.accountsevices;
 
 import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
 import hu.Progmatic.ParaBank.pages.AdminPagePage;
@@ -8,23 +8,41 @@ import hu.Progmatic.ParaBank.pages.RegisterPage;
 import org.testng.annotations.Test;
 
 public class OpenNewAccountTest extends DriverBaseTest {
+
     HomePage homePage;
     RegisterPage registerPage;
-
     OpenNewAccountPage openNewAccountPage;
     AdminPagePage adminPagePage;
 
-    @Test
-    public void OpenNewAccountTest() throws InterruptedException {
+    @Test (description = "Test Case Key: TDDT-T11")
+    public void openNewAccountTestCase1() throws InterruptedException {
+
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         openNewAccountPage = new OpenNewAccountPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
-        adminPagePage.clean();
+
+
         homePage.loadHomePage();
-        registerPage.Register();
-        openNewAccountPage.NewAccount();
-        adminPagePage.clean();
+        registerPage.register();
+        openNewAccountPage.newAccountChecking();
+
+
+
+    }
+
+    @Test (description = "Test Case Key: TDDT-T15")
+    public void openNewAccountTestCase2() throws InterruptedException {
+
+        homePage = new HomePage(driver, wait);
+        registerPage = new RegisterPage(driver, wait);
+        openNewAccountPage = new OpenNewAccountPage(driver, wait);
+        adminPagePage = new AdminPagePage(driver, wait);
+
+
+        homePage.loadHomePage();
+        registerPage.register();
+        openNewAccountPage.newAccountSavings();
 
     }
 }

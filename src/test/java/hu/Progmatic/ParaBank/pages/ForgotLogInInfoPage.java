@@ -31,47 +31,47 @@ public class ForgotLogInInfoPage extends DriverBaseTest {
 
     public void forgotLogIn() throws InterruptedException{
 
-        //Megkeresi és rákattint a forgot login info gombra
+
         WebElement forgotLogInButton = driver.findElement(forgotby);
         forgotLogInButton.click();
 
-        //Megkeresi és kitölti a Fist Name-t XY-al
+
         WebElement firstName = driver.findElement(firstNameby);
         firstName.sendKeys("XY");
 
-        //Megkeresi és kitölti a Last Name-t YX-al
+
         WebElement lastName = driver.findElement(lastNameby);
         lastName.sendKeys("YX");
 
-        //Megkeresi és kitölti az Address-t Dream bvld-al
+
         WebElement address = driver.findElement(addressby);
         address.sendKeys("Dream bvld");
 
-        //Megkeresi és kitölti a City-t Hope-al
+
         WebElement city = driver.findElement(cityby);
         city.sendKeys("Hope");
 
-        //Megkeresi és kitölti a State-t Montana-val
+
         WebElement state = driver.findElement(stateby);
         state.sendKeys("Montana");
         Thread.sleep(1000);
-        //Megkeresi és kitölti a Zip code-t 77777-al
+
         WebElement zipCode = driver.findElement(zipby);
         zipCode.sendKeys("77777");
 
         Thread.sleep(1000);
-        //Megkeresi és kitölti a SSN-t asd-al
+
         WebElement ssn = driver.findElement(ssnby);
         ssn.sendKeys("asd");
 
         Thread.sleep(2000);
-        //Megkeresi és rákattint a Find my info gombra
+
         WebElement findMyInfo = driver.findElement(findby);
         findMyInfo.click();
 
         Thread.sleep(2000);
 
-        //Ellenőriz
+
         WebElement message = driver.findElement(messageby);
         Assert.assertEquals(message.getText(), "Customer Lookup");
     }
