@@ -10,17 +10,14 @@ public class ForgotLoginInfoTest extends DriverBaseTest {
     RegisterPage registerPage;
     LogOutPage logOutPage;
     ForgotLogInInfoPage forgotLogInInfoPage;
-    AdminPagePage adminPagePage;
 
-    @Test (description = "Test Case Key: TDDT-T12")
+    @Test(groups = "customerLogin",description = "Test Case Key: TDDT-T12")
     public void ForgotLogInInfoTestCase() throws InterruptedException {
 
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
-        adminPagePage = new AdminPagePage(driver, wait);
         logOutPage = new LogOutPage(driver, wait);
         forgotLogInInfoPage = new ForgotLogInInfoPage(driver, wait);
-
 
         homePage.loadHomePage();
         registerPage.register();

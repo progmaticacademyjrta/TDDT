@@ -19,10 +19,10 @@ public class LogOutPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void logOut(){
+    public void logOut() {
 
         WebElement logoutButton = driver.findElement(logoutby);
         logoutButton.click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
     }
 }

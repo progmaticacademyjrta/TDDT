@@ -29,7 +29,7 @@ public class ForgotLogInInfoPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void forgotLogIn() throws InterruptedException{
+    public void forgotLogIn() throws InterruptedException {
 
 
         WebElement forgotLogInButton = driver.findElement(forgotby);
@@ -54,22 +54,22 @@ public class ForgotLogInInfoPage extends DriverBaseTest {
 
         WebElement state = driver.findElement(stateby);
         state.sendKeys("Montana");
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
 
         WebElement zipCode = driver.findElement(zipby);
         zipCode.sendKeys("77777");
 
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
 
         WebElement ssn = driver.findElement(ssnby);
         ssn.sendKeys("asd");
 
-        Thread.sleep(2000);
+        //Thread.sleep(2000);
 
         WebElement findMyInfo = driver.findElement(findby);
         findMyInfo.click();
 
-        Thread.sleep(2000);
+        //Thread.sleep(1000);
 
 
         WebElement message = driver.findElement(messageby);

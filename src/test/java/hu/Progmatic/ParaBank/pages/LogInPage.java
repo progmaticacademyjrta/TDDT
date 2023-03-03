@@ -38,9 +38,8 @@ public class LogInPage extends DriverBaseTest {
         LoginButton.click();
 
 
-
         WebElement Faild = driver.findElement(Faildby);
-        Assert.assertEquals(Faild.getText(), "An internal error has occurred and has been logged.");
+        Assert.assertEquals(Faild.getText(), "The username and password could not be verified.");
 
     }
 
@@ -57,7 +56,6 @@ public class LogInPage extends DriverBaseTest {
 
         WebElement LoginButton = driver.findElement(loginbuttonby);
         LoginButton.click();
-
 
 
         WebElement Faild = driver.findElement(Faildby);
@@ -78,7 +76,6 @@ public class LogInPage extends DriverBaseTest {
 
         WebElement LoginButton = driver.findElement(loginbuttonby);
         LoginButton.click();
-
 
 
         WebElement Faild = driver.findElement(Faildby);
@@ -122,7 +119,7 @@ public class LogInPage extends DriverBaseTest {
 
 
         WebElement Faild = driver.findElement(Faildby);
-        Assert.assertEquals(Faild.getText(), "An internal error has occurred and has been logged.");
+        Assert.assertEquals(Faild.getText(), "The username and password could not be verified.");
 
     }
 
@@ -142,7 +139,7 @@ public class LogInPage extends DriverBaseTest {
 
 
         WebElement Faild = driver.findElement(Faildby);
-        Assert.assertEquals(Faild.getText(), "An internal error has occurred and has been logged.");
+        Assert.assertEquals(Faild.getText(), "The username and password could not be verified.");
 
     }
 

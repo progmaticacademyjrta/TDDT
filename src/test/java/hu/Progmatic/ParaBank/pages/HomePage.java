@@ -17,7 +17,7 @@ public class HomePage extends DriverBaseTest {
 
     public void loadHomePage() {
         driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
-        Assert.assertEquals(driver.getCurrentUrl(),"https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
         System.out.println("Homepage loaded properly.");
     }
 }

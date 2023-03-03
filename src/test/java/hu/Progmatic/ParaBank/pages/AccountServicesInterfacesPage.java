@@ -15,12 +15,9 @@ public class AccountServicesInterfacesPage extends DriverBaseTest {
     By accountsOverviewBy = By.linkText("Accounts Overview");
     By transferFundsBy = By.linkText("Transfer Funds");
     By billPayBy = By.linkText("Bill Pay");
-
     By findTransactionBy = By.linkText("Find Transactions");
     By updateContactInfoBy = By.linkText("Update Contact Info");
-
     By requestLoanBy = By.linkText("Request Loan");
-
     By logOutBy = By.linkText("Log Out");
 
 

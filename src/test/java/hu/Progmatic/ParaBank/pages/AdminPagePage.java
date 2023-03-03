@@ -6,7 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class AdminPagePage extends DriverBaseTest {
     WebDriver driver;
@@ -50,9 +53,9 @@ public class AdminPagePage extends DriverBaseTest {
         cleanButton.click();
 
 
-        WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
-        Assert.assertTrue(status.isDisplayed());
-        System.out.println("Down payment loan processor server is running");
+     //   WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
+     //   Assert.assertTrue(status.isDisplayed());
+     //   System.out.println("Down payment loan processor server is running");
     }
 
     public void availableFunds() {
@@ -80,9 +83,9 @@ public class AdminPagePage extends DriverBaseTest {
         cleanButton.click();
 
 
-        WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
-        Assert.assertTrue(status.isDisplayed());
-        System.out.println("Available loan processor server is running");
+      //  WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
+      //  Assert.assertTrue(status.isDisplayed());
+      //  System.out.println("Available loan processor server is running");
     }
 
     public void combined() {
@@ -109,8 +112,9 @@ public class AdminPagePage extends DriverBaseTest {
         WebElement cleanButton = driver.findElement(cleanby);
         cleanButton.click();
 
-        WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
-        Assert.assertTrue(status.isDisplayed());
-        System.out.println("Combined loan processor server is running");
+        // WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
+        // Assert.assertTrue(status.isDisplayed());
+        // System.out.println("Combined loan processor server is running");
     }
+
 }

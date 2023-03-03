@@ -10,8 +10,8 @@ public class DemoIconTest extends DriverBaseTest {
     HomePage homePage;
     DemoIconPage demoIconPage;
 
-    @Test (description = "Test Case Key: TDDT-T14")
-    public void demoIconTestCase(){
+    @Test(groups = "icons",description = "Test Case Key: TDDT-T14")
+    public void demoIconTestCase() {
 
         homePage = new HomePage(driver, wait);
         demoIconPage = new DemoIconPage(driver, wait);

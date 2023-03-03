@@ -12,12 +12,12 @@ public class OpenNewAccountPage extends DriverBaseTest {
     WebDriver driver;
     WebDriverWait wait;
 
-    By openNEwAccountBy = By.xpath("//*[@id=\"leftPanel\"]/ul/li[1]/a");
+    By openNEwAccountBy = By.linkText("Open New Account");
     By typeby = By.id("type");
 
 
     By successMessageby2 = By.className("title");
-    By OpenNewAccountButtonby = By.xpath("//*[@id=\"rightPanel\"]/div/div/form/div/input");
+    By OpenNewAccountButtonby = By.cssSelector("input[value='Open New Account']");
 
     public OpenNewAccountPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -32,6 +32,7 @@ public class OpenNewAccountPage extends DriverBaseTest {
 
         Select type = new Select(driver.findElement(typeby));
         type.selectByVisibleText("SAVINGS");
+        Thread.sleep(1000);
 
         WebElement clickOnAccountButton = driver.findElement(OpenNewAccountButtonby);
         clickOnAccountButton.click();
@@ -51,7 +52,7 @@ public class OpenNewAccountPage extends DriverBaseTest {
 
         Select type = new Select(driver.findElement(typeby));
         type.selectByVisibleText("CHECKING");
-
+        Thread.sleep(1000);
 
         WebElement clickOnAccountButton = driver.findElement(OpenNewAccountButtonby);
         clickOnAccountButton.click();
@@ -60,5 +61,6 @@ public class OpenNewAccountPage extends DriverBaseTest {
 
         WebElement successMessage2 = driver.findElement(successMessageby2);
         Assert.assertEquals(successMessage2.getText(), "Account Opened!");
+
     }
 }

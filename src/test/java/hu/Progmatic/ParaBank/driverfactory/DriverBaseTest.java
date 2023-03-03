@@ -9,16 +9,22 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.*;
 import java.time.Duration;
+
 
 public class DriverBaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
-    By cleanby = By.cssSelector("button[value='CLEAN']");
+    By cleanBy = By.cssSelector("button[value='CLEAN']");
+    By databaseBy = By.cssSelector("input[value='jdbc']");
+    By submitBy = By.cssSelector("input[value='Submit']");
+    protected String[] boundaryValues = new String[20];
+
 
     @BeforeMethod(alwaysRun = true)
-    public void driverSetup() {
+    public void driverSetup() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
 
@@ -32,8 +38,17 @@ public class DriverBaseTest {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(30000));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
 
+        Thread.sleep(1000);
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
-        WebElement cleanButton = driver.findElement(cleanby);
+
+
+        WebElement dataBaseType = driver.findElement(databaseBy);
+        dataBaseType.click();
+
+        WebElement submitButton = driver.findElement(submitBy);
+        submitButton.click();
+
+        WebElement cleanButton = driver.findElement(cleanBy);
         cleanButton.click();
 
         actions = new Actions(driver);
@@ -44,5 +59,23 @@ public class DriverBaseTest {
     public void driverCleanUp() {
         driver.quit();
         System.out.println("Test case execution finished");
+    }
+
+    public void getBoundaryValues() {
+        String line = "";
+        String splitBy = ";";
+        try {
+            //parsing a CSV file into BufferedReader class constructor
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("resources/requestLoanTestData.csv"));
+
+            //returns a Boolean value
+            while ((line = bufferedReader.readLine()) != null) {
+
+                // use comma as separator
+                boundaryValues = line.split(splitBy);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

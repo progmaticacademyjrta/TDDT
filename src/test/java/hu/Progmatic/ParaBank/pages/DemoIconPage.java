@@ -20,7 +20,7 @@ public class DemoIconPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void demoIcon(){
+    public void demoIcon() {
 
 
         WebElement iconClick = driver.findElement(iconby);

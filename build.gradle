@@ -18,10 +18,30 @@ test {
     useTestNG()
 }
 
-task smokeTests(type: Test) {
-    def groups = System.getProperty('groups', 'smoketests')
+task icons(type: Test) {
+    def groups = System.getProperty('groups', 'icons')
     useTestNG() {
         includeGroups groups
     }
 }
 
+task customerLogin(type: Test) {
+    def groups = System.getProperty('groups', 'customerLogin')
+    useTestNG() {
+        includeGroups groups
+    }
+}
+
+task requestLoan(type: Test) {
+    def groups = System.getProperty('groups', 'requestLoan')
+    useTestNG() {
+        includeGroups groups
+    }
+}
+
+task accountServices(type: Test) {
+    def groups = System.getProperty('groups', 'accountServices')
+    useTestNG() {
+        includeGroups groups
+    }
+}

@@ -13,6 +13,7 @@ public class HomeIconPage extends DriverBaseTest {
 
     By iconby = By.xpath("//*[@id=\"headerPanel\"]/ul[2]/li[1]/a");
     By readMoreby = By.xpath("//*[@id=\"rightPanel\"]/p[1]/a");
+
     public HomeIconPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;

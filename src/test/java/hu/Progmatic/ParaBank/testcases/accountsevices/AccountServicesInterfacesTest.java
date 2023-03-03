@@ -12,8 +12,8 @@ public class AccountServicesInterfacesTest extends DriverBaseTest {
     RegisterPage registerPage;
     AccountServicesInterfacesPage accountServicesInterfacesPage;
 
-    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T30")
-    public void accountServicesInterfacesTestCase() throws InterruptedException {
+    @Test(groups = "accountServices", description = "Test Case Key: TDDT-T30")
+    public void accountServicesInterfacesTestCase() {
 
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);

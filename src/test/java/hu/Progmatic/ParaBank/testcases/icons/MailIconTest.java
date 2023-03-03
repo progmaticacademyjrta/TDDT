@@ -9,7 +9,7 @@ public class MailIconTest extends DriverBaseTest {
     HomePage homePage;
     MailIconPage mailIconPage;
 
-    @Test (description = "Test Case Key: TDDT-T17")
+    @Test(groups = "icons",description = "Test Case Key: TDDT-T17")
     public void mailIconTestCase() {
 
         homePage = new HomePage(driver, wait);

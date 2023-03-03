@@ -32,7 +32,7 @@ public class BillPayPage extends DriverBaseTest {
         this.wait = wait;
     }
 
-    public void billPay() throws InterruptedException{
+    public void billPay() throws InterruptedException {
 
 
         WebElement billPayButton = driver.findElement(billPayby);

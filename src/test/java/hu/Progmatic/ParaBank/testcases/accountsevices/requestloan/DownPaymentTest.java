@@ -2,22 +2,19 @@ package hu.Progmatic.ParaBank.testcases.accountsevices.requestloan;
 
 import hu.Progmatic.ParaBank.driverfactory.DriverBaseTest;
 import hu.Progmatic.ParaBank.pages.AdminPagePage;
-import hu.Progmatic.ParaBank.pages.HomePage;
 import hu.Progmatic.ParaBank.pages.RegisterPage;
 import hu.Progmatic.ParaBank.pages.RequestLoanPage;
 import org.testng.annotations.Test;
 
 public class DownPaymentTest extends DriverBaseTest {
 
-    HomePage homePage;
     RegisterPage registerPage;
     AdminPagePage adminPagePage;
     RequestLoanPage requestLoanPage;
 
-    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T19")
-    public void downPaymentBoundaryValue500Valid() throws InterruptedException {
+    @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T19")
+    public void downPaymentBoundaryValue500Valid() {
 
-        homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
         requestLoanPage = new RequestLoanPage(driver, wait);
@@ -27,10 +24,9 @@ public class DownPaymentTest extends DriverBaseTest {
         requestLoanPage.boundaryValue500();
     }
 
-    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T20")
-    public void downPaymentBoundaryValue501Valid() throws InterruptedException {
+    @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T20")
+    public void downPaymentBoundaryValue501Valid() {
 
-        homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
         requestLoanPage = new RequestLoanPage(driver, wait);
@@ -40,15 +36,14 @@ public class DownPaymentTest extends DriverBaseTest {
         requestLoanPage.boundaryValue501();
     }
 
-    @Test(groups = "smoketests", description = "Test Case Key: TDDT-T18")
-    public void downPaymentBoundaryValue499Invalid() throws InterruptedException {
+    @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T18")
+    public void downPaymentBoundaryValue499Invalid() {
 
-        homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
         requestLoanPage = new RequestLoanPage(driver, wait);
 
-
+        requestLoanPage.getBoundaryValues();
         adminPagePage.downPayment();
         registerPage.register();
         requestLoanPage.boundaryValue499();
