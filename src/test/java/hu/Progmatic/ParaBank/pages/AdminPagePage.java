@@ -52,10 +52,6 @@ public class AdminPagePage extends DriverBaseTest {
         WebElement cleanButton = driver.findElement(cleanby);
         cleanButton.click();
 
-
-     //   WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
-     //   Assert.assertTrue(status.isDisplayed());
-     //   System.out.println("Down payment loan processor server is running");
     }
 
     public void availableFunds() {
@@ -82,10 +78,6 @@ public class AdminPagePage extends DriverBaseTest {
         WebElement cleanButton = driver.findElement(cleanby);
         cleanButton.click();
 
-
-      //  WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
-      //  Assert.assertTrue(status.isDisplayed());
-      //  System.out.println("Available loan processor server is running");
     }
 
     public void combined() {
@@ -112,9 +104,6 @@ public class AdminPagePage extends DriverBaseTest {
         WebElement cleanButton = driver.findElement(cleanby);
         cleanButton.click();
 
-        // WebElement status = driver.findElement(By.xpath("//*[text()='Running']"));
-        // Assert.assertTrue(status.isDisplayed());
-        // System.out.println("Combined loan processor server is running");
     }
 
 }

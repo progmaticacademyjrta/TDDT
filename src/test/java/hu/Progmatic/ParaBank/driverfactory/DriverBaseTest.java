@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -17,9 +18,11 @@ public class DriverBaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
+
     By cleanBy = By.cssSelector("button[value='CLEAN']");
     By databaseBy = By.cssSelector("input[value='jdbc']");
     By submitBy = By.cssSelector("input[value='Submit']");
+
     protected String[] boundaryValues = new String[20];
 
 
@@ -31,16 +34,25 @@ public class DriverBaseTest {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofMillis(30000));
         driver.manage().window().maximize();
-        //Deleting all the cookies
         driver.manage().deleteAllCookies();
 
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(30000));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15000));
 
         Thread.sleep(1000);
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
+        if (driver.getPageSource().contains("Running")) {
+
+            Assert.assertTrue(driver.findElement(By.xpath("//*[text()='Running']")).isDisplayed());
+            System.out.println("Server is Running");
+
+        } else {
+            driver.findElement(By.cssSelector("input[value='Startup']")).click();
+            Thread.sleep(1000);
+            System.out.println("Server changed to Running");
+        }
 
         WebElement dataBaseType = driver.findElement(databaseBy);
         dataBaseType.click();
@@ -65,13 +77,13 @@ public class DriverBaseTest {
         String line = "";
         String splitBy = ";";
         try {
-            //parsing a CSV file into BufferedReader class constructor
+            //BufferedReader segítségével .csv fájl beolvasása
             BufferedReader bufferedReader = new BufferedReader(new FileReader("resources/requestLoanTestData.csv"));
 
-            //returns a Boolean value
+            //Amennyiben a sorban már nincs érték (sor végére ér) a beolvasási ciklus befejeződik
             while ((line = bufferedReader.readLine()) != null) {
 
-                // use comma as separator
+                // Pontosvesszőként feldarabolja a beolvasott fájl értékeit és elmenti String tömb indexeire
                 boundaryValues = line.split(splitBy);
             }
         } catch (IOException e) {
