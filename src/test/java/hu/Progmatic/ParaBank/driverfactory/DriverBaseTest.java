@@ -22,6 +22,9 @@ public class DriverBaseTest {
     By cleanBy = By.cssSelector("button[value='CLEAN']");
     By databaseBy = By.cssSelector("input[value='jdbc']");
     By submitBy = By.cssSelector("input[value='Submit']");
+    By soapEndpointBy = By.id("soapEndpoint");
+    By restEndpointBy = By.id("restEndpoint");
+    By endpointBy = By.id("endpoint");
 
     protected String[] boundaryValues = new String[20];
 
@@ -50,12 +53,20 @@ public class DriverBaseTest {
 
         } else {
             driver.findElement(By.cssSelector("input[value='Startup']")).click();
-            Thread.sleep(1000);
             System.out.println("Server changed to Running");
         }
 
         WebElement dataBaseType = driver.findElement(databaseBy);
         dataBaseType.click();
+
+        WebElement soapEndpoint = driver.findElement(soapEndpointBy);
+        soapEndpoint.clear();
+
+        WebElement restEndpoint = driver.findElement(restEndpointBy);
+        restEndpoint.clear();
+
+        WebElement endPoint = driver.findElement(endpointBy);
+        endPoint.clear();
 
         WebElement submitButton = driver.findElement(submitBy);
         submitButton.click();
