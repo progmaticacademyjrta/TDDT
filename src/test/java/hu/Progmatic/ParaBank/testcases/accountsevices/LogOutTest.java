@@ -14,14 +14,13 @@ public class LogOutTest extends DriverBaseTest {
     LogOutPage logOutPage;
     AdminPagePage adminPagePage;
 
-    @Test(groups= "accountServices", description = "Test Case Key: TDDT-T29")
+    @Test(groups = "accountServices", description = "Test Case Key: TDDT-T29")
     public void logOutTestCase() {
 
         homePage = new HomePage(driver, wait);
         registerPage = new RegisterPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
         logOutPage = new LogOutPage(driver, wait);
-
 
         homePage.loadHomePage();
         registerPage.register();

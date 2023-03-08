@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class BillPayPage extends DriverBaseTest {
+
     WebDriver driver;
     WebDriverWait wait;
 
@@ -25,8 +26,10 @@ public class BillPayPage extends DriverBaseTest {
     By succesmessageby = By.xpath("//*[@id=\"rightPanel\"]/div/div[2]/h1");
 
     public BillPayPage(WebDriver driver, WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
+
     }
 
     public void billPay() throws InterruptedException {

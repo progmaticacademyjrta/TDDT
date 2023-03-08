@@ -22,11 +22,9 @@ public class OpenNewAccountTest extends DriverBaseTest {
         openNewAccountPage = new OpenNewAccountPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
 
-
         homePage.loadHomePage();
         registerPage.register();
         openNewAccountPage.newAccountChecking();
-
 
     }
 
@@ -37,7 +35,6 @@ public class OpenNewAccountTest extends DriverBaseTest {
         registerPage = new RegisterPage(driver, wait);
         openNewAccountPage = new OpenNewAccountPage(driver, wait);
         adminPagePage = new AdminPagePage(driver, wait);
-
 
         homePage.loadHomePage();
         registerPage.register();

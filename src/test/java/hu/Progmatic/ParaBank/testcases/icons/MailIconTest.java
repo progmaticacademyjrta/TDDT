@@ -6,6 +6,7 @@ import hu.Progmatic.ParaBank.pages.MailIconPage;
 import org.testng.annotations.Test;
 
 public class MailIconTest extends DriverBaseTest {
+
     HomePage homePage;
     MailIconPage mailIconPage;
 

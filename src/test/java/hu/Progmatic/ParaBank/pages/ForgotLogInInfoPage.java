@@ -25,59 +25,43 @@ public class ForgotLogInInfoPage extends DriverBaseTest {
     By messageby = By.className("title");
 
     public ForgotLogInInfoPage(WebDriver driver, WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
+
     }
 
-    public void forgotLogIn() throws InterruptedException {
-
+    public void forgotLogIn() {
 
         WebElement forgotLogInButton = driver.findElement(forgotby);
         forgotLogInButton.click();
 
-
         WebElement firstName = driver.findElement(firstNameby);
         firstName.sendKeys("XY");
-
 
         WebElement lastName = driver.findElement(lastNameby);
         lastName.sendKeys("YX");
 
-
         WebElement address = driver.findElement(addressby);
         address.sendKeys("Dream bvld");
-
 
         WebElement city = driver.findElement(cityby);
         city.sendKeys("Hope");
 
-
         WebElement state = driver.findElement(stateby);
         state.sendKeys("Montana");
-        //Thread.sleep(1000);
 
         WebElement zipCode = driver.findElement(zipby);
         zipCode.sendKeys("77777");
 
-        //Thread.sleep(1000);
-
         WebElement ssn = driver.findElement(ssnby);
         ssn.sendKeys("asd");
-
-        //Thread.sleep(2000);
 
         WebElement findMyInfo = driver.findElement(findby);
         findMyInfo.click();
 
-        //Thread.sleep(1000);
-
-
         WebElement message = driver.findElement(messageby);
         Assert.assertEquals(message.getText(), "Customer Lookup");
+
     }
 }
-///html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[2]/td[2]/input
-///html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[7]/td[2]/input
-
-////*[@id="lastName"]
-////*[@id="ssn"]

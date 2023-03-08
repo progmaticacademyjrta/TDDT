@@ -12,6 +12,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class AdminPagePage extends DriverBaseTest {
+
     WebDriver driver;
     WebDriverWait wait;
 
@@ -29,6 +30,7 @@ public class AdminPagePage extends DriverBaseTest {
     }
 
     public void downPayment() {
+
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
 
         WebElement initBalanceInput = driver.findElement(initBalanceBy);

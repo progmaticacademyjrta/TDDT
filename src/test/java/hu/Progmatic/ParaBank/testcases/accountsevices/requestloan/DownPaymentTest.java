@@ -22,6 +22,7 @@ public class DownPaymentTest extends DriverBaseTest {
         adminPagePage.downPayment();
         registerPage.register();
         requestLoanPage.boundaryValue500();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T20")
@@ -34,6 +35,7 @@ public class DownPaymentTest extends DriverBaseTest {
         adminPagePage.downPayment();
         registerPage.register();
         requestLoanPage.boundaryValue501();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T18")
@@ -47,5 +49,6 @@ public class DownPaymentTest extends DriverBaseTest {
         adminPagePage.downPayment();
         registerPage.register();
         requestLoanPage.boundaryValue499();
+
     }
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,11 +14,12 @@ import org.testng.annotations.BeforeMethod;
 import java.io.*;
 import java.time.Duration;
 
-
 public class DriverBaseTest {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
+    protected ChromeOptions options;
 
     By cleanBy = By.cssSelector("button[value='CLEAN']");
     By databaseBy = By.cssSelector("input[value='jdbc']");
@@ -31,17 +33,23 @@ public class DriverBaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void driverSetup() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
+        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+
+        options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--remote-allow-origins=*");
 
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofMillis(30000));
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
 
-
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(30000));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(15000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
+
+        options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
 
         Thread.sleep(1000);
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
@@ -52,6 +60,7 @@ public class DriverBaseTest {
             System.out.println("Server is Running");
 
         } else {
+
             driver.findElement(By.cssSelector("input[value='Startup']")).click();
             System.out.println("Server changed to Running");
         }
@@ -80,13 +89,17 @@ public class DriverBaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void driverCleanUp() {
+
         driver.quit();
         System.out.println("Test case execution finished");
+
     }
 
     public void getBoundaryValues() {
+
         String line = "";
         String splitBy = ";";
+
         try {
             //BufferedReader segítségével .csv fájl beolvasása
             BufferedReader bufferedReader = new BufferedReader(new FileReader("resources/requestLoanTestData.csv"));
@@ -100,5 +113,6 @@ public class DriverBaseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

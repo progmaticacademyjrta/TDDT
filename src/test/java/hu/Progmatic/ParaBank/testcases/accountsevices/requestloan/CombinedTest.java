@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 public class CombinedTest extends DriverBaseTest {
 
-
     RegisterPage registerPage;
     AdminPagePage adminPagePage;
     RequestLoanPage requestLoanPage;
@@ -23,6 +22,7 @@ public class CombinedTest extends DriverBaseTest {
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue500();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T26")
@@ -35,6 +35,7 @@ public class CombinedTest extends DriverBaseTest {
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue499();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T25")
@@ -47,6 +48,7 @@ public class CombinedTest extends DriverBaseTest {
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue1001();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T24")
@@ -59,5 +61,6 @@ public class CombinedTest extends DriverBaseTest {
         adminPagePage.combined();
         registerPage.register();
         requestLoanPage.boundaryValue1000();
+
     }
 }

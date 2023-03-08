@@ -11,6 +11,7 @@ public class AccountServicesInterfacesPage extends DriverBaseTest {
 
     WebDriver driver;
     WebDriverWait wait;
+
     By openNewAccountBy = By.linkText("Open New Account");
     By accountsOverviewBy = By.linkText("Accounts Overview");
     By transferFundsBy = By.linkText("Transfer Funds");
@@ -22,11 +23,14 @@ public class AccountServicesInterfacesPage extends DriverBaseTest {
 
 
     public AccountServicesInterfacesPage(WebDriver driver, WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
+
     }
 
     public void interfacesCheck() {
+
         WebElement openNewAccount = driver.findElement(openNewAccountBy);
         openNewAccount.click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/openaccount.htm");
@@ -66,7 +70,6 @@ public class AccountServicesInterfacesPage extends DriverBaseTest {
         logOut.click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
         System.out.println("Log out successful");
-
 
     }
 }

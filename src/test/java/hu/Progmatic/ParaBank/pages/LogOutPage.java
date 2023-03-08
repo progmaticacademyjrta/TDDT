@@ -15,8 +15,10 @@ public class LogOutPage extends DriverBaseTest {
     By logoutby = By.xpath("//*[@id=\"leftPanel\"]/ul/li[8]/a");
 
     public LogOutPage(WebDriver driver, WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
+
     }
 
     public void logOut() {
@@ -24,5 +26,6 @@ public class LogOutPage extends DriverBaseTest {
         WebElement logoutButton = driver.findElement(logoutby);
         logoutButton.click();
         Assert.assertEquals(driver.getCurrentUrl(), "https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
+
     }
 }

@@ -12,7 +12,6 @@ public class AvailableFoundsTest extends DriverBaseTest {
     AdminPagePage adminPagePage;
     RequestLoanPage requestLoanPage;
 
-
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T22")
     public void availableFundsBoundaryValue999Valid() {
 
@@ -23,6 +22,7 @@ public class AvailableFoundsTest extends DriverBaseTest {
         adminPagePage.availableFunds();
         registerPage.register();
         requestLoanPage.boundaryValue999();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T23")
@@ -35,6 +35,7 @@ public class AvailableFoundsTest extends DriverBaseTest {
         adminPagePage.availableFunds();
         registerPage.register();
         requestLoanPage.boundaryValue1001();
+
     }
 
     @Test(groups = "requestLoan", description = "Test Case Key: TDDT-T21")
@@ -47,5 +48,6 @@ public class AvailableFoundsTest extends DriverBaseTest {
         adminPagePage.availableFunds();
         registerPage.register();
         requestLoanPage.boundaryValue1000();
+
     }
 }

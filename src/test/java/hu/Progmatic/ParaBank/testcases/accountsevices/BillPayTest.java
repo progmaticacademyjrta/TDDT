@@ -22,7 +22,6 @@ public class BillPayTest extends DriverBaseTest {
         adminPagePage = new AdminPagePage(driver, wait);
         billPayPage = new BillPayPage(driver, wait);
 
-
         homePage.loadHomePage();
         registerPage.register();
         billPayPage.billPay();

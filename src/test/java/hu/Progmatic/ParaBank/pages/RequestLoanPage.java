@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
-
 public class RequestLoanPage extends DriverBaseTest {
 
     WebDriver driver;
@@ -22,12 +20,11 @@ public class RequestLoanPage extends DriverBaseTest {
     By logOutBy = By.linkText("Log Out");
     By errorBy = By.className("error");
 
-
-
-
     public RequestLoanPage(WebDriver driver, WebDriverWait wait) {
+
         this.driver = driver;
         this.wait = wait;
+
     }
 
     public void boundaryValue501() {
@@ -56,6 +53,7 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
+
     }
 
     public void boundaryValue500() {
@@ -84,6 +82,7 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
+
     }
 
     public void boundaryValue499() {
@@ -94,13 +93,11 @@ public class RequestLoanPage extends DriverBaseTest {
         requestLoan.click();
         System.out.println("Request Loan page appear");
 
-
         WebElement loanAmountInput = driver.findElement(loanAmountBy);
         loanAmountInput.sendKeys("1000");
 
         WebElement downPaymentInput = driver.findElement(downPaymentBy);
         downPaymentInput.sendKeys(boundaryValues[1]);
-
 
         WebElement applyNowButton = driver.findElement(applyNowBy);
         applyNowButton.click();
@@ -113,6 +110,7 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
+
     }
 
     public void boundaryValue999() {
@@ -140,6 +138,7 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
+
     }
 
     public void boundaryValue1000() {
@@ -159,7 +158,6 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement applyNowButton = driver.findElement(applyNowBy);
         applyNowButton.click();
 
-
         WebElement statusText = driver.findElement(loanStatusBy);
 
         Assert.assertEquals(statusText.getText(), "Approved");
@@ -168,7 +166,6 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
-
 
     }
 
@@ -197,6 +194,6 @@ public class RequestLoanPage extends DriverBaseTest {
         WebElement logOut = driver.findElement(logOutBy);
         logOut.click();
         System.out.println("Log out successful");
-    }
 
+    }
 }
