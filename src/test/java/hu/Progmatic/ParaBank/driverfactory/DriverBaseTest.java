@@ -19,7 +19,6 @@ public class DriverBaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
-    protected ChromeOptions options;
 
     By cleanBy = By.cssSelector("button[value='CLEAN']");
     By databaseBy = By.cssSelector("input[value='jdbc']");
@@ -30,26 +29,18 @@ public class DriverBaseTest {
 
     protected String[] boundaryValues = new String[20];
 
-
     @BeforeMethod(alwaysRun = true)
     public void driverSetup() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
-        options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--remote-allow-origins=*");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(chromeOptions);
 
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofMillis(30000));
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(30000));
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
-
-        options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofMillis(5000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
 
         Thread.sleep(1000);
         driver.get("https://parabank.parasoft.com/parabank/admin.htm");
@@ -101,13 +92,11 @@ public class DriverBaseTest {
         String splitBy = ";";
 
         try {
-            //BufferedReader segítségével .csv fájl beolvasása
+
             BufferedReader bufferedReader = new BufferedReader(new FileReader("resources/requestLoanTestData.csv"));
 
-            //Amennyiben a sorban már nincs érték (sor végére ér) a beolvasási ciklus befejeződik
             while ((line = bufferedReader.readLine()) != null) {
 
-                // Pontosvesszőként feldarabolja a beolvasott fájl értékeit és elmenti String tömb indexeire
                 boundaryValues = line.split(splitBy);
             }
         } catch (IOException e) {
